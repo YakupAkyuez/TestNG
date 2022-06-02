@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="istenen method calistirma" verbose="3">
+    <test name="method">
+
+        <!--  belirli bir method icin exclusive keywordler kullanilir
+
+        Eger metholdlar dependsOn ile birbirine bagliysa xml calisirken celiski olmamali eger varsa
+        hicbir test calismaz
+
+        suite taginin icine yazilacak verbose  konsolda cikan mesajlarin daha az veya cok olmasini belirler
+        -->
+        <classes>
+            <class name="tests.day16_notations.C03_Priority">
+                <methods>
+                    <include name="test2">
+                    </include>
+                </methods>
+            </class>
+            <class name="tests.day16_notations.C04_DependsOnMethods">
+                <methods>
+                    <exclude name="test03"></exclude>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
